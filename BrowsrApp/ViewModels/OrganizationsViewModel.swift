@@ -48,6 +48,8 @@ class OrganizationsViewModel: OrganizationsViewModelProtocol {
             
             if let organizations = organizations {
                 self.organizations = organizations
+                // Load favorite organizations from UserDefaults
+                favoriteOrganizations = UserDefaultsManager.shared.loadFavoriteOrganizations()
                 self.delegate?.organizationsFetched()
             } else if let error = error {
                 self.delegate?.organizationsFetchFailed(with: error)
@@ -75,11 +77,13 @@ class OrganizationsViewModel: OrganizationsViewModelProtocol {
         if !isFavorite(organization.id) {
             let favorite = FavoriteOrganization(organizationId: organization.id, name: organization.login, avatarUrl: organization.avatarUrl ?? "")
             favoriteOrganizations.append(favorite)
+            UserDefaultsManager.shared.saveFavoriteOrganizations(favoriteOrganizations)
         }
     }
     
     func removeOrganizationFromFavorites(_ organization: Organization) {
         favoriteOrganizations.removeAll { $0.organizationId == organization.id }
+        UserDefaultsManager.shared.saveFavoriteOrganizations(favoriteOrganizations)
     }
     
     // Method to toggle the favorite status of an organization

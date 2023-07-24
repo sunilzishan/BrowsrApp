@@ -18,6 +18,7 @@
 		2B3A9CFC2A6EDA9E003CFE24 /* FavoriteOrganization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B3A9CFB2A6EDA9E003CFE24 /* FavoriteOrganization.swift */; };
 		2B3A9CFE2A6EDACB003CFE24 /* OrganizationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B3A9CFD2A6EDACB003CFE24 /* OrganizationTableViewCell.swift */; };
 		2B3A9D002A6EDAF2003CFE24 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B3A9CFF2A6EDAF2003CFE24 /* NetworkManager.swift */; };
+		2B3A9D022A6EE12C003CFE24 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B3A9D012A6EE12C003CFE24 /* UserDefaultsManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,7 @@
 		2B3A9CFB2A6EDA9E003CFE24 /* FavoriteOrganization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteOrganization.swift; sourceTree = "<group>"; };
 		2B3A9CFD2A6EDACB003CFE24 /* OrganizationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganizationTableViewCell.swift; sourceTree = "<group>"; };
 		2B3A9CFF2A6EDAF2003CFE24 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		2B3A9D012A6EE12C003CFE24 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +175,7 @@
 		2B3A9CF22A6ED20B003CFE24 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				2B3A9D012A6EE12C003CFE24 /* UserDefaultsManager.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -277,6 +280,7 @@
 				2B3A9D002A6EDAF2003CFE24 /* NetworkManager.swift in Sources */,
 				2B3A9CC52A6ECAF6003CFE24 /* AppDelegate.swift in Sources */,
 				2B3A9CC72A6ECAF6003CFE24 /* SceneDelegate.swift in Sources */,
+				2B3A9D022A6EE12C003CFE24 /* UserDefaultsManager.swift in Sources */,
 				2B3A9CF42A6ED2AA003CFE24 /* OrganizationsViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

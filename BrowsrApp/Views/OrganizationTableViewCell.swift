@@ -72,4 +72,3 @@ class OrganizationTableViewCell: UITableViewCell {
         accessoryView = isFavorite ? UIImageView(image: UIImage(systemName: "star.fill")) : nil
     }
 }
-
