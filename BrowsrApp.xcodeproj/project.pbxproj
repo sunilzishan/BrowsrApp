@@ -17,7 +17,6 @@
 		2B3A9CF42A6ED2AA003CFE24 /* OrganizationsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B3A9CF32A6ED2AA003CFE24 /* OrganizationsViewModel.swift */; };
 		2B3A9CFC2A6EDA9E003CFE24 /* FavoriteOrganization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B3A9CFB2A6EDA9E003CFE24 /* FavoriteOrganization.swift */; };
 		2B3A9CFE2A6EDACB003CFE24 /* OrganizationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B3A9CFD2A6EDACB003CFE24 /* OrganizationTableViewCell.swift */; };
-		2B3A9D002A6EDAF2003CFE24 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B3A9CFF2A6EDAF2003CFE24 /* NetworkManager.swift */; };
 		2B3A9D022A6EE12C003CFE24 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B3A9D012A6EE12C003CFE24 /* UserDefaultsManager.swift */; };
 /* End PBXBuildFile section */
 
@@ -64,7 +63,6 @@
 		2B3A9CF32A6ED2AA003CFE24 /* OrganizationsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganizationsViewModel.swift; sourceTree = "<group>"; };
 		2B3A9CFB2A6EDA9E003CFE24 /* FavoriteOrganization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteOrganization.swift; sourceTree = "<group>"; };
 		2B3A9CFD2A6EDACB003CFE24 /* OrganizationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganizationTableViewCell.swift; sourceTree = "<group>"; };
-		2B3A9CFF2A6EDAF2003CFE24 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		2B3A9D012A6EE12C003CFE24 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -109,7 +107,6 @@
 				2B3A9CEF2A6ED1EE003CFE24 /* ViewModels */,
 				2B3A9CF22A6ED20B003CFE24 /* Utilities */,
 				2B3A9CF12A6ED201003CFE24 /* Resources */,
-				2B3A9CFF2A6EDAF2003CFE24 /* NetworkManager.swift */,
 				2B3A9CD22A6ECAF7003CFE24 /* Info.plist */,
 			);
 			path = BrowsrApp;
@@ -277,7 +274,6 @@
 				2B3A9CFE2A6EDACB003CFE24 /* OrganizationTableViewCell.swift in Sources */,
 				2B3A9CD92A6ECB08003CFE24 /* OrganizationsViewController.swift in Sources */,
 				2B3A9CFC2A6EDA9E003CFE24 /* FavoriteOrganization.swift in Sources */,
-				2B3A9D002A6EDAF2003CFE24 /* NetworkManager.swift in Sources */,
 				2B3A9CC52A6ECAF6003CFE24 /* AppDelegate.swift in Sources */,
 				2B3A9CC72A6ECAF6003CFE24 /* SceneDelegate.swift in Sources */,
 				2B3A9D022A6EE12C003CFE24 /* UserDefaultsManager.swift in Sources */,

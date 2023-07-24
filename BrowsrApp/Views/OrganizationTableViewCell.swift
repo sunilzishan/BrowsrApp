@@ -22,6 +22,11 @@ class OrganizationTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        avatarImageView.image = nil // Clear the image while waiting for the new one
+    }
+    
     private func setupUI() {
         // Set up the UI elements and layout constraints
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -59,11 +64,17 @@ class OrganizationTableViewCell: UITableViewCell {
         // Configure the cell with the organization data
         nameLabel.text = organization.login
         
-        if let avatarURLString = organization.avatarUrl, let avatarURL = URL(string: avatarURLString) {
-            NetworkManager.shared.fetchImage(from: avatarURL) { (image) in
-                DispatchQueue.main.async {
-                    self.avatarImageView.image = image
-                    self.setNeedsLayout()
+        if let avatarURLString = organization.avatarUrl, let _ = URL(string: avatarURLString) {
+            // Fetch and cache the avatar picture using the BrowsrClient method
+            BrowsrClient().fetchAndStoreAvatarPicture(for: organization) { [weak self] (data, error) in
+                guard let self = self else { return }
+                
+                if let data = data {
+                    DispatchQueue.main.async {
+                        self.avatarImageView.image = UIImage(data: data)
+                    }
+                } else if let error = error {
+                    print("Error fetching image: \(error)")
                 }
             }
         }
@@ -71,4 +82,5 @@ class OrganizationTableViewCell: UITableViewCell {
         // Set the accessory view based on the favorite status
         accessoryView = isFavorite ? UIImageView(image: UIImage(systemName: "star.fill")) : nil
     }
+    
 }

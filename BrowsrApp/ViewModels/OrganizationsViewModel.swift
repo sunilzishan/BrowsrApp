@@ -11,7 +11,6 @@ import Foundation
 // Protocol for the OrganizationsViewModelDelegate
 protocol OrganizationsViewModelDelegate: AnyObject {
     func organizationsFetched()
-    func organizationsFetchFailed(with error: Error)
     init(client: BrowsrClient)
 }
 
@@ -51,8 +50,22 @@ class OrganizationsViewModel: OrganizationsViewModelProtocol {
                 // Load favorite organizations from UserDefaults
                 favoriteOrganizations = UserDefaultsManager.shared.loadFavoriteOrganizations()
                 self.delegate?.organizationsFetched()
-            } else if let error = error {
-                self.delegate?.organizationsFetchFailed(with: error)
+            } else if let internalError = error {
+                DispatchQueue.main.async {
+                    let popup = ToastView()
+                    switch internalError {
+                    case .invalidURL:
+                        popup.showToast(with: "Invalid URL")
+                    case .invalidData:
+                        popup.showToast(with: "Invalid Data")
+                    case .networkError(let networkError):
+                        popup.showToast(with: networkError.localizedDescription)
+                    case .decodingError(let decodingError):
+                        popup.showToast(with: decodingError.localizedDescription)
+                    default:
+                        popup.showToast(with: "Something went wrong")
+                    }
+                }
             }
         }
     }
@@ -75,7 +88,7 @@ class OrganizationsViewModel: OrganizationsViewModelProtocol {
     
     func addOrganizationToFavorites(_ organization: Organization) {
         if !isFavorite(organization.id) {
-            let favorite = FavoriteOrganization(organizationId: organization.id, name: organization.login, avatarUrl: organization.avatarUrl ?? "")
+            let favorite = FavoriteOrganization(organizationId: organization.id)
             favoriteOrganizations.append(favorite)
             UserDefaultsManager.shared.saveFavoriteOrganizations(favoriteOrganizations)
         }

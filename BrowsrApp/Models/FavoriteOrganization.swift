@@ -9,6 +9,4 @@ import Foundation
 
 struct FavoriteOrganization: Codable {
     let organizationId: Int
-    let name: String
-    let avatarUrl: String
 }
