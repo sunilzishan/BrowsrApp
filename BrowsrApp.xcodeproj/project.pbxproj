@@ -18,6 +18,7 @@
 		2B3A9CFC2A6EDA9E003CFE24 /* FavoriteOrganization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B3A9CFB2A6EDA9E003CFE24 /* FavoriteOrganization.swift */; };
 		2B3A9CFE2A6EDACB003CFE24 /* OrganizationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B3A9CFD2A6EDACB003CFE24 /* OrganizationTableViewCell.swift */; };
 		2B3A9D022A6EE12C003CFE24 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B3A9D012A6EE12C003CFE24 /* UserDefaultsManager.swift */; };
+		2B3A9D122A6EF2F1003CFE24 /* LoadingIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B3A9D112A6EF2F1003CFE24 /* LoadingIndicatorView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,7 @@
 		2B3A9CFB2A6EDA9E003CFE24 /* FavoriteOrganization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteOrganization.swift; sourceTree = "<group>"; };
 		2B3A9CFD2A6EDACB003CFE24 /* OrganizationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganizationTableViewCell.swift; sourceTree = "<group>"; };
 		2B3A9D012A6EE12C003CFE24 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
+		2B3A9D112A6EF2F1003CFE24 /* LoadingIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingIndicatorView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +158,7 @@
 			isa = PBXGroup;
 			children = (
 				2B3A9CFD2A6EDACB003CFE24 /* OrganizationTableViewCell.swift */,
+				2B3A9D112A6EF2F1003CFE24 /* LoadingIndicatorView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -274,6 +277,7 @@
 				2B3A9CFE2A6EDACB003CFE24 /* OrganizationTableViewCell.swift in Sources */,
 				2B3A9CD92A6ECB08003CFE24 /* OrganizationsViewController.swift in Sources */,
 				2B3A9CFC2A6EDA9E003CFE24 /* FavoriteOrganization.swift in Sources */,
+				2B3A9D122A6EF2F1003CFE24 /* LoadingIndicatorView.swift in Sources */,
 				2B3A9CC52A6ECAF6003CFE24 /* AppDelegate.swift in Sources */,
 				2B3A9CC72A6ECAF6003CFE24 /* SceneDelegate.swift in Sources */,
 				2B3A9D022A6EE12C003CFE24 /* UserDefaultsManager.swift in Sources */,

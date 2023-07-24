@@ -11,6 +11,7 @@ import Foundation
 // Protocol for the OrganizationsViewModelDelegate
 protocol OrganizationsViewModelDelegate: AnyObject {
     func organizationsFetched()
+    func organizationsFetchFailed(with error: BrowsrError) 
     init(client: BrowsrClient)
 }
 
@@ -51,6 +52,7 @@ class OrganizationsViewModel: OrganizationsViewModelProtocol {
                 favoriteOrganizations = UserDefaultsManager.shared.loadFavoriteOrganizations()
                 self.delegate?.organizationsFetched()
             } else if let internalError = error {
+                self.delegate?.organizationsFetchFailed(with: internalError)
                 DispatchQueue.main.async {
                     let popup = ToastView()
                     switch internalError {

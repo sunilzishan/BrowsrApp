@@ -13,6 +13,7 @@ class OrganizationsViewController: UIViewController {
     private let searchController = UISearchController(searchResultsController: nil)
     private var viewModel: OrganizationsViewModel
     private var filteredOrganizations: [Organization] = []
+    private var loadingIndicator: LoadingIndicatorView!
     
     init(viewModel: OrganizationsViewModel = OrganizationsViewModel()) {
         self.viewModel = viewModel
@@ -34,6 +35,19 @@ class OrganizationsViewController: UIViewController {
         tableView.dataSource = self
         setupUI()
         setupViewModel()
+        // Initialize the loading indicator
+        loadingIndicator = LoadingIndicatorView()
+        view.addSubview(loadingIndicator)
+        loadingIndicator.translatesAutoresizingMaskIntoConstraints = false
+        
+        // Position the loading indicator at the center of the view
+        NSLayoutConstraint.activate([
+            loadingIndicator.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            loadingIndicator.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+        ])
+        
+        // Start the loading indicator
+        loadingIndicator.startAnimating()
         viewModel.fetchOrganizations()
     }
     
@@ -128,14 +142,28 @@ extension OrganizationsViewController: UITableViewDelegate {
 // MARK: - OrganizationsViewModelDelegate
 
 extension OrganizationsViewController: OrganizationsViewModelDelegate {
+    
     func organizationsFetched() {
         DispatchQueue.main.async {
             self.tableView.reloadData()
+            // Hide the loading indicator once data is fetched
+            self.hideLoadingIndicator()
         }
     }
     
-    func organizationsFetchFailed(with error: Error) {
-        // Handle the error, e.g., display an alert to the user
+    func organizationsFetchFailed(with error: BrowsrLib.BrowsrError) {
+        // Hide the loading indicator
+        hideLoadingIndicator()
+    }
+    
+    func showLoadingIndicator() {
+        // Start animating the loading indicator
+        loadingIndicator.startAnimating()
+    }
+    
+    func hideLoadingIndicator() {
+        // Stop animating the loading indicator
+        loadingIndicator.stopAnimating()
     }
 }
 
